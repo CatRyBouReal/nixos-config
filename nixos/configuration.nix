@@ -66,6 +66,7 @@
 
   environment.systemPackages = with pkgs; [
     sddm-chili-theme
+    bibata-cursors
   ];
 
   nix.settings = {
@@ -93,6 +94,8 @@
 
   i18n.defaultLocale = "en_GB.UTF-8";
 
+  programs.dconf.enable = true;
+
   console = {
     earlySetup = true;
     font = "${pkgs.terminus_font}/share/consolefonts/ter-u22b.psf.gz";
@@ -112,6 +115,12 @@
       enable = true;
 
       theme = "chili";
+
+      settings = {
+        Theme = {
+          CursorTheme = "Bibata-Modern-Classic";
+        };
+      };
     };
 
     windowManager.i3 = {

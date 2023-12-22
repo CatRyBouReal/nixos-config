@@ -86,6 +86,45 @@
 
   programs.alacritty.enable = true;
 
+  programs.neovim = {
+    enable = true;
+
+    viAlias = true;
+    vimAlias = true;
+  };
+
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 16;
+
+    x11.enable = true;
+  };
+
+  gtk = {
+    enable = true;
+
+    theme = {
+      package = pkgs.arc-theme;
+      name = "Arc-Dark";
+    };
+
+    iconTheme = {
+      package = pkgs.arc-icon-theme;
+      name = "Arc";
+    };
+  };
+
+  qt = {
+    enable = true;
+
+    platformTheme = "gtk3";
+
+    style = {
+      name = "gtk2";
+    };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
