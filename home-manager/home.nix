@@ -74,6 +74,18 @@
     };
   };
 
+  xsession.windowManager.i3 = let
+    mod = "Mod4";
+  in {
+    enable = true;
+
+    config = {
+      modifier = mod;
+    };
+  };
+
+  programs.alacritty.enable = true;
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

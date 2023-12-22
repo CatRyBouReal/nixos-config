@@ -64,6 +64,10 @@
     })
     config.nix.registry;
 
+  environment.systemPackages = with pkgs; [
+    sddm-chili-theme
+  ];
+
   nix.settings = {
     # Enable flakes and new 'nix' command
     experimental-features = "nix-command flakes";
@@ -92,16 +96,38 @@
   console = {
     earlySetup = true;
     font = "${pkgs.terminus_font}/share/consolefonts/ter-u22b.psf.gz";
-    packages = with pkgs; [ terminus_font ];
+    packages = with pkgs; [terminus_font];
 
     keyMap = "uk";
+  };
+
+  services.xserver = {
+    enable = true;
+
+    xkb.layout = "gb";
+
+    libinput.enable = true;
+
+    displayManager.sddm = {
+      enable = true;
+
+      theme = "chili";
+    };
+
+    windowManager.i3 = {
+      enable = true;
+    };
+
+    excludePackages = with pkgs; [
+      xterm
+    ];
   };
 
   users.users = {
     catrybou = {
       initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = ["wheel" "networkmanager"];
     };
   };
 
