@@ -61,6 +61,8 @@
 
   home.packages = with pkgs; [
     ubuntu_font_family
+
+    nvidia-offload
   ];
 
   fonts.fontconfig.enable = true;

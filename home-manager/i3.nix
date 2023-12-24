@@ -26,7 +26,7 @@
 
       fonts = {
         names = ["Ubuntu Mono"];
-	size = 12.0;
+        size = 12.0;
       };
     };
   };
