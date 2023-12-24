@@ -12,6 +12,8 @@
         "browser.download.panel.shown" = true;
       };
 
+      search.default = "StartPage";
+
       search.engines = {
         "Nix Packages" = {
           urls = [
@@ -57,6 +59,21 @@
         sponsorblock
         multi-account-containers
       ];
+
+      containers = {
+        personal = {
+          id = 1;
+          name = "Personal";
+          icon = "fingerprint";
+          color = "blue";
+        };
+        school = {
+          id = 2;
+          name = "School";
+          icon = "briefcase";
+          color = "orange";
+        };
+      };
     };
   };
 }
