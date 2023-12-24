@@ -18,6 +18,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./firefox.nix
   ];
 
   nixpkgs = {
@@ -27,6 +28,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      outputs.overlays.nur-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -58,6 +60,8 @@
 
   # Enable home-manager
   programs.home-manager.enable = true;
+
+  programs.bash.enable = true;
 
   # Enable and configure git
   programs.git = {
@@ -122,6 +126,18 @@
 
     style = {
       name = "gtk2";
+    };
+  };
+
+  programs.direnv = {
+    enable = true;
+
+    package = pkgs.unstable.direnv;
+
+    nix-direnv = {
+      enable = true;
+
+      package = pkgs.unstable.direnv;
     };
   };
 
