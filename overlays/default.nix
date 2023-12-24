@@ -22,6 +22,9 @@
   };
 
   nur-packages = final: _prev: {
-    nur = import inputs.nur {nurpkgs = final; pkgs = final;};
+    nur = import inputs.nur {
+      nurpkgs = final;
+      pkgs = final;
+    };
   };
 }
