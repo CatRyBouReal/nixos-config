@@ -19,6 +19,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./firefox.nix
+    ./i3.nix
   ];
 
   nixpkgs = {
@@ -58,6 +59,12 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
+  home.packages = with pkgs; [
+    ubuntu_font_family
+  ];
+
+  fonts.fontconfig.enable = true;
+
   # Enable home-manager
   programs.home-manager.enable = true;
 
@@ -75,16 +82,6 @@
     enable = true;
     settings = {
       git_protocol = "ssh";
-    };
-  };
-
-  xsession.windowManager.i3 = let
-    mod = "Mod4";
-  in {
-    enable = true;
-
-    config = {
-      modifier = mod;
     };
   };
 
