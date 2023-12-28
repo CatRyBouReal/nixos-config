@@ -175,6 +175,9 @@
     pulse.enable = true;
   };
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+
   users.users = {
     catrybou = {
       initialPassword = "correcthorsebatterystaple";
