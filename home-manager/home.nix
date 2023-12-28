@@ -65,6 +65,10 @@
     nvidia-offload
   ];
 
+  home.file = {
+    ".background-image".source = ./wallpaper.jpg;
+  };
+
   fonts.fontconfig.enable = true;
 
   # Enable home-manager

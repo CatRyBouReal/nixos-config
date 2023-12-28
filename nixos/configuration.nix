@@ -127,6 +127,8 @@
       enable = true;
     };
 
+    desktopManager.wallpaper.mode = "fill";
+
     excludePackages = with pkgs; [
       xterm
     ];
