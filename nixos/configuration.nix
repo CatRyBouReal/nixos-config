@@ -76,6 +76,11 @@
     auto-optimise-store = true;
   };
 
+  # Udev Rules
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", MODE="0664", GROUP="wheel"
+  '';
+
   # Enable bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
