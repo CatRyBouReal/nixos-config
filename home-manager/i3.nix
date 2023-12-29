@@ -56,7 +56,7 @@
         "${mod}+l" = "focus right";
 
         "${mod}+Shift+q" = "exit";
-	"${mod}+Shift+r" = "restart";
+        "${mod}+Shift+r" = "restart";
 
         "${mod}+Shift+c" = "kill";
 
